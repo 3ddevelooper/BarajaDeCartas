@@ -21,30 +21,22 @@ public class BarajaService {
     
      Baraja baraja = crearBaraja();
      List<Carta> cartasRemovidas= new ArrayList<>();
-     private final int NUM_CARTAS_TOTAL = 40;
+     private final int NUM_CARTAS_TOTAL = 52;
      
      
     //Crea la baraja ordenada
     private Baraja crearBaraja() {
  
         String[] palos = Carta.PALOS;
+        String[]numeros_letras = Carta.LETRA_NUMERO;
         List<Carta> cartas = new ArrayList<>();
  
          //Recorro los palos
          for (String palo : palos) {
-             //Recorro los numeros
-             for (int j = 0; j < Carta.LIMITE_CARTA_PALO; j++) {
-                 //Las posiciones del 8 y del 9 son el 7 y el 8 (emepzamos en 8)
-                 if (!(j == 7 || j == 8)) {
-                     if (j >= 9) {
-                         //Solo para la sota, caballo y rey
-                         cartas.add(new Carta(j+1, palo));
-                     } else {
-                         //Para los casos de 1 a 7
-                         cartas.add(new Carta(j+1, palo));
-                     }
-                 }
-             }
+            //Recorro los numeros
+            for (String numeros_letra : numeros_letras) {
+                cartas.add(new Carta(numeros_letra, palo));
+            }
          }
       
        return new Baraja(cartas,0);
