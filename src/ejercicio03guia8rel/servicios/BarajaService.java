@@ -57,12 +57,12 @@ public class BarajaService {
     
     
     //Baraja las cartas para ubicarlas de forma aleatoria
-    public void barajar() {
+    private void barajar() {
      Collections.shuffle(baraja.getCartas());
     }
     
     //Saca la siguente carta del mazo
-    public String siguienteCarta() {
+    private String siguienteCarta() {
         String retorno = baraja.getCartas().get(baraja.getPosSiguienteCarta()).toString()+"\n";
         cartasRemovidas.add(baraja.getCartas().remove(baraja.getPosSiguienteCarta()));
         return retorno;
