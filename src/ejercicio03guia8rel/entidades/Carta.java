@@ -12,25 +12,25 @@ package ejercicio03guia8rel.entidades;
 public class Carta {
 
     //Atributos
-    private int numero;
+    private String letraynumero;
     private String palo;
 
     //Constantes
     public static final String[] PALOS = {"♠", "♣", "♥", "♦"};
-    public static final int LIMITE_CARTA_PALO = 12;
+    public static final String[] LETRA_NUMERO={"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
 
     //Constructor
-    public Carta(int numero, String palo) {
-        this.numero = numero;
+    public Carta(String letraynumero, String palo) {
+        this.letraynumero = letraynumero;
         this.palo = palo;
     }
 
-    public int getNumero() {
-        return numero;
+    public String getLetraynumero() {
+        return letraynumero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setLetraynumero(String letraynumero) {
+        this.letraynumero = letraynumero;
     }
 
     public String getPalo() {
@@ -41,19 +41,15 @@ public class Carta {
         this.palo = palo;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Número:" + numero + ", Palo:" + palo;
-//    }
     
     @Override
     public String toString() {
         
         return  "*******\n"+
-        "*  "+numero+palo+"*\n"+
+        "*  "+letraynumero+palo+"*\n"+
         "*     *\n"+
         "*     *\n"+
-        "*"+palo+numero+"  *\n"+
+        "*"+palo+letraynumero+"  *\n"+
         "*******" ;                
     }
 }
